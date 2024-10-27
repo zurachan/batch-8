@@ -20,7 +20,38 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <h1>User Content here !</h1>
+                <h1>User Grid</h1>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td><b>id</b> </td>
+                            <td><b>First Name</b></td>
+                            <td><b>Last Name</b></td>
+                            <td><b>Age</b></td>
+                            <td class="d-flex justify-content-between">
+                                <b>Hành động</b>
+                                <button class="btn btn-success btn-sm" (click)="onAddUser()">
+                                    Thêm
+                                </button>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of listUser">
+                            <td>{{user.id}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.age}}</td>
+                            <td>
+                                <button class="btn btn-secondary">Xem chi tiết</button>
+                                |
+                                <button class="btn btn-primary">Sửa</button>
+                                |
+                                <button class="btn btn-danger">Xoá</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
