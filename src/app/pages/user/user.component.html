@@ -43,11 +43,11 @@
                             <td>{{user.lastName}}</td>
                             <td>{{user.age}}</td>
                             <td>
-                                <button class="btn btn-secondary">Xem chi tiết</button>
+                                <button class="btn btn-secondary" (click)="onViewDetail(user.id)">Xem chi tiết</button>
                                 |
-                                <button class="btn btn-primary">Sửa</button>
+                                <button class="btn btn-primary" (click)="onEdit(user.id)">Sửa</button>
                                 |
-                                <button class="btn btn-danger">Xoá</button>
+                                <button class="btn btn-danger" (click)="onDelete(user.id)">Xoá</button>
                             </td>
                         </tr>
                     </tbody>
@@ -55,4 +55,6 @@
             </div>
         </div>
     </section>
+
+    <ng-container #popup></ng-container>
 </div>

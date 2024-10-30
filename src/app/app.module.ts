@@ -11,7 +11,9 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { DepartmentComponent } from './pages/department/department.component';
 import { UserCreateComponent } from './pages/user/user-create/user-create.component';
+import { UserPopupComponent } from './pages/user/user-popup/user-popup.component';
 import { UserComponent } from './pages/user/user.component';
+import { UserModule } from './pages/user/user.module';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,11 @@ import { UserComponent } from './pages/user/user.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    UserComponent,
+    // UserComponent,
     DashboardComponent,
     DepartmentComponent,
-    UserCreateComponent,
+    // UserCreateComponent,
+    // UserPopupComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { UserModule } from './pages/user/user.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -10,17 +11,23 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
   },
-  {
-    path: 'user',
-    component: UserComponent,
-  },
-  {
-    path: 'user/create',
-    component: UserCreateComponent,
-  },
+  // {
+  //   path: 'user',
+  //   component: UserComponent,
+  // },
+  // {
+  //   path: 'user/create',
+  //   component: UserCreateComponent,
+  // },
   {
     path: 'department',
     component: DepartmentComponent,
+  },
+
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('../app/pages/user/user.module').then((m) => m.UserModule),
   },
 ];
 
