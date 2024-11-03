@@ -11,32 +11,14 @@ const Endpoint = 'user';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   closeModal$ = new Subject();
-  closeModal(reason?: any) {
-    this.closeModal$.next(reason);
-  }
-
-  getAll(): Observable<any> {
-    return this.httpClient.get<User[]>(`${BaseUrl}` + Endpoint).pipe();
-  }
-
-  getById(id: number): Observable<any> {
-    return this.httpClient.get<User>(BaseUrl + Endpoint + '/' + id).pipe();
-  }
-
-  create(model: User): Observable<any> {
-    return this.httpClient.post(`${BaseUrl}` + Endpoint, model).pipe();
-  }
-
-  update(id: number, model: User): Observable<any> {
-    return this.httpClient.put(BaseUrl + Endpoint + '/' + id, model).pipe();
-  }
-
-  delete(id: number): Observable<any> {
-    return this.httpClient
-      .delete<boolean>(BaseUrl + Endpoint + '/' + id)
-      .pipe();
-  }
+  closeModal(reason?: any) { this.closeModal$.next(reason) }
+  
+  getAll = (): Observable<any> => this.httpClient.get<User[]>(`${BaseUrl}/${Endpoint}`).pipe();
+  getById = (id: number): Observable<any> => this.httpClient.get<User>(`${BaseUrl}/${Endpoint}/${id}`).pipe();
+  create = (model: User): Observable<any> => this.httpClient.post<boolean>(`${BaseUrl}/${Endpoint}`, model).pipe();
+  update = (id: number, model: User): Observable<any> => this.httpClient.put<boolean>(`${BaseUrl}/${Endpoint}/${id}`, model).pipe();
+  delete = (id: number): Observable<any> => this.httpClient.delete<boolean>(`${BaseUrl}/${Endpoint}/${id}`).pipe();
 }

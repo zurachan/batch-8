@@ -1,33 +1,30 @@
-import { UserModule } from './pages/user/user.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './layout/unauthen/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { DepartmentComponent } from './pages/department/department.component';
-import { UserComponent } from './pages/user/user.component';
-import { UserCreateComponent } from './pages/user/user-create/user-create.component';
+import { AuthenticateGuard } from './services/jwt/authenticate.guard';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthenticateGuard],
     component: DashboardComponent,
   },
-  // {
-  //   path: 'user',
-  //   component: UserComponent,
-  // },
-  // {
-  //   path: 'user/create',
-  //   component: UserCreateComponent,
-  // },
   {
-    path: 'department',
-    component: DepartmentComponent,
+    path: 'login',
+    component: LoginComponent,
   },
-
   {
     path: 'user',
+    canActivate: [AuthenticateGuard],
     loadChildren: () =>
       import('../app/pages/user/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: 'department',
+    canActivate: [AuthenticateGuard],
+    loadChildren: () =>
+      import('../app/pages/department/department.module').then((m) => m.DepartmentModule),
   },
 ];
 
@@ -35,4 +32,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

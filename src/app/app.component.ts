@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from './services/authenticate.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {}
+  constructor(private authService: AuthenticateService) { }
+  ngOnInit(): void {
+  }
+
+  IsAuthen = () => this.authService.LoggedIn
+
+  Logout = (value: any) => this.authService.Logout()
 }
