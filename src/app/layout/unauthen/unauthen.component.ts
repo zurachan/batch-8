@@ -13,7 +13,7 @@ export class UnauthenComponent implements OnInit {
 
   ngOnInit() {
     if (this.location.path() == '') {
-      this.router.navigate(['login'])
+      this.router.navigateByUrl('login')
     }
   }
 

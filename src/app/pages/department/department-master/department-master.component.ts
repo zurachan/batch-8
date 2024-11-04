@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Department } from '../../../models/department';
-// import * as departmentAction from '../state/department.actions';
 import * as departmentSelector from '../state/department.selectors';
 import { DepartmentAction } from '../state/department.actions';
 

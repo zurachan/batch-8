@@ -45,6 +45,7 @@ import { JwtInterceptor } from './services/jwt/jwt.interceptor';
         },
       },
     }),
+
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

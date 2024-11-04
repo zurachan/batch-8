@@ -5,10 +5,7 @@ import { Injectable } from '@angular/core';
 import { DepartmentAction } from './department.actions';
 @Injectable()
 export class DepartmentEffects {
-    constructor(
-        private actions: Actions,
-        private departmentService: DepartmentService
-    ) { }
+    constructor(private actions: Actions, private departmentService: DepartmentService) { }
 
     listDepartment$ = createEffect(() =>
         this.actions.pipe(
