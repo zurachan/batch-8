@@ -78,6 +78,7 @@
               "buildTarget": "batch-8:build:production"
             },
             "development": {
+              "port": 5000,
               "buildTarget": "batch-8:build:development"
             }
           },

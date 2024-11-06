@@ -17,7 +17,7 @@ export class DepartmentEffects {
                 )
             )
         )
-    );
+    )
 
     detailDepartment$ = createEffect(() =>
         this.actions.pipe(
@@ -29,5 +29,5 @@ export class DepartmentEffects {
                 )
             )
         )
-    );
+    )
 }
