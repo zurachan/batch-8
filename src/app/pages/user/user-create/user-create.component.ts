@@ -1,7 +1,7 @@
-import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from './../../../services/user.service';
 
 @Component({
   selector: 'app-user-create',
@@ -14,7 +14,7 @@ export class UserCreateComponent implements OnInit {
     private UserService: UserService,
     private router: Router,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   form!: FormGroup;
   pageTitle: string = '';
@@ -73,15 +73,11 @@ export class UserCreateComponent implements OnInit {
         { value: null, disabled: this.disabledForm },
         [Validators.required],
       ],
-
-      EducationType: [],
     });
   }
 
   onSave() {
     let value = this.form.getRawValue();
-    console.log(value);
-    return;
     switch (this.currentPage.value) {
       case 'edit':
         this.UserService.update(this.currentId, value).subscribe((res) => {
@@ -113,6 +109,5 @@ export class UserCreateComponent implements OnInit {
 
   onCheckedValueChange(value: any) {
     this.form.controls['EducationType'].setValue(value);
-    console.log(this.form.getRawValue());
   }
 }

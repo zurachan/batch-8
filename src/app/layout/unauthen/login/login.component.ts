@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) return
     let model = this.form.getRawValue();
 
-    this.authService.Login(model).pipe().subscribe(res => {
+    this.authService.Login(model).subscribe((res: any) => {
       if (res.success) {
         this.authService.credentialSubject.next(res);
         localStorage.setItem('credential', JSON.stringify(res));

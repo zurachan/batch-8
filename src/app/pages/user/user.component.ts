@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private container: ViewContainerRef
-  ) {}
+  ) { }
 
   listUser: User[] = [];
 
@@ -32,7 +32,7 @@ export class UserComponent implements OnInit {
   }
 
   getAll() {
-    this.userService.getAll().subscribe((res) => {
+    this.userService.getAll().subscribe((res: any) => {
       this.listUser = [...res];
     });
   }
