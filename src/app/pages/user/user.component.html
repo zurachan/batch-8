@@ -3,14 +3,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">User</h1>
+                    <h1 class="m-0">{{'User' | translate}}</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
-                            <a [routerLink]="['/']">Dashboard</a>
+                            <a [routerLink]="['/']">{{'Dashboard' | translate}}</a>
                         </li>
-                        <li class="breadcrumb-item active">User</li>
+                        <li class="breadcrumb-item active">{{'User' | translate}}</li>
                     </ol>
                 </div>
             </div>
@@ -20,18 +20,18 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <h1>User Grid</h1>
+                <h1>{{'UserGrid' | translate}}</h1>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <td><b>id</b> </td>
-                            <td><b>First Name</b></td>
-                            <td><b>Last Name</b></td>
-                            <td><b>Age</b></td>
+                            <td><b>{{'UserTable.FirstName' | translate}}</b></td>
+                            <td><b>{{'UserTable.LastName' | translate}}</b></td>
+                            <td><b>{{'UserTable.Age' | translate}}</b></td>
                             <td class="d-flex justify-content-between">
-                                <b>Hành động</b>
+                                <b>{{'Action.Action' | translate}}</b>
                                 <button class="btn btn-success btn-sm" (click)="onAddUser()">
-                                    Thêm
+                                    {{'Action.Add' | translate}}
                                 </button>
                             </td>
                         </tr>
@@ -43,11 +43,17 @@
                             <td>{{user.lastName}}</td>
                             <td>{{user.age}}</td>
                             <td>
-                                <button class="btn btn-secondary" (click)="onViewDetail(user.id)">Xem chi tiết</button>
+                                <button class="btn btn-secondary" (click)="onViewDetail(user.id)">
+                                    {{'Action.View' | translate}}
+                                </button>
                                 |
-                                <button class="btn btn-primary" (click)="onEdit(user.id)">Sửa</button>
+                                <button class="btn btn-primary" (click)="onEdit(user.id)">
+                                    {{'Action.Edit' | translate}}
+                                </button>
                                 |
-                                <button class="btn btn-danger" (click)="onDelete(user.id)">Xoá</button>
+                                <button class="btn btn-danger" (click)="onDelete(user.id)">
+                                    {{'Action.Delete' | translate}}
+                                </button>
                             </td>
                         </tr>
                     </tbody>

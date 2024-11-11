@@ -1,0 +1,25 @@
+{
+  "Action": {
+    "Action": "Hành động",
+    "Add": "Thêm",
+    "Edit": "Sửa",
+    "View": "Xem chi tiết",
+    "Delete": "Xóa"
+  },
+  "User": "Nhân sự",
+  "UserGrid": "Danh sách nhân sự",
+  "UserTable": {
+    "FirstName": "Tên",
+    "LastName": "Họ",
+    "Age": "Tuổi"
+  },
+  "Dashboard": "Trang chủ",
+  "LogOut": "Đăng xuất",
+  "Department": "Phòng ban",
+  "DepartmentGrid": "Danh sách phòng ban",
+  "DepartmentTable": {
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "Age": "Age"
+  }
+}

@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private container: ViewContainerRef
+    private container: ViewContainerRef,
   ) { }
 
   listUser: User[] = [];

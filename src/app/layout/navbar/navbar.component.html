@@ -13,7 +13,13 @@
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>
-
+        <li class="nav-item">
+            <select (change)="ChangeLang($event)" class="form-control" name="ChangeLang"
+                title="Change display language">
+                <option [selected]="lang==='en'" value="en">English</option>
+                <option [selected]="lang==='vi'" value="vi">Tiếng Việt</option>
+            </select>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown">
                 <i class="fas fa-user-circle"></i>
@@ -23,7 +29,7 @@
                 <span class="dropdown-item">{{credential.user.username}}</span>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item dropdown-footer" (click)="ClickLogOut()">
-                    Đăng xuất
+                    {{'LogOut' | translate}}
                 </a>
             </div>
         </li>

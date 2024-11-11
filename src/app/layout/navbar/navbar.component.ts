@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AuthenticateService } from '../../services/authenticate.service';
 
 @Component({
@@ -6,12 +7,24 @@ import { AuthenticateService } from '../../services/authenticate.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   credential: any
-  constructor(private authService: AuthenticateService) {
+  @Output() LogoutEvent = new EventEmitter<any>();
+
+  lang: string = ''
+
+  constructor(private authService: AuthenticateService, private translateService: TranslateService) {
     this.credential = this.authService.GetCredential
   }
+  ngOnInit(): void {
+    this.lang = localStorage.getItem('lang') || 'en'
+  }
 
-  @Output() LogoutEvent = new EventEmitter<any>();
   ClickLogOut = () => this.LogoutEvent.emit()
+
+  ChangeLang(event: any) {
+    let selectedLang = event.target.value
+    localStorage.setItem('lang', selectedLang)
+    this.translateService.use(selectedLang)
+  }
 }

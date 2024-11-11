@@ -1,14 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { CustomEducationTypeComponent } from './custom-education-type/custom-education-type.component';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { UserDeleteConfirmComponent } from './user-delete-confirm/user-delete-confirm.component';
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
-import { UserDeleteConfirmComponent } from './user-delete-confirm/user-delete-confirm.component';
-import { CustomEducationTypeComponent } from './custom-education-type/custom-education-type.component';
 
 @NgModule({
-  imports: [CommonModule, UserRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    ReactiveFormsModule,
+    TranslateModule
+  ],
   declarations: [
     UserComponent,
     UserCreateComponent,
@@ -16,4 +22,4 @@ import { CustomEducationTypeComponent } from './custom-education-type/custom-edu
     CustomEducationTypeComponent,
   ],
 })
-export class UserModule {}
+export class UserModule { }
